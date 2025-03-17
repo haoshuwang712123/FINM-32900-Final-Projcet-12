@@ -22,7 +22,7 @@ def test_index_is_date(df_loaded):
     assert isinstance(df_loaded.index, pd.DatetimeIndex), "Index is not a DatetimeIndex!"
 
 def test_expected_columns_exist(df_loaded):
-    """Ensure some key expected columns exist."""
+    """Ensure some key expected columns exish."""
     expected_columns = {"Treasury_SF_02Y", "Treasury_SF_05Y", "Treasury_SF_10Y"}
     assert expected_columns.issubset(df_loaded.columns), f"Missing columns: {expected_columns - set(df_loaded.columns)}"
 
