@@ -61,6 +61,14 @@ def task_clean_raw():
         "clean": True,
     }
 
+def task_generate_reference():
+    """Run generate_reference.py to create reference.csv"""
+    return {
+        "actions": ["python ./src/generate_reference.py"],
+        "targets": [DATA_DIR / "reference.csv"],
+        "clean": True,
+    }
+
 def task_calc_treasury_data():
     """Run `calc_treasury_data.py` which processes Treasury SF data."""
     return {
@@ -74,13 +82,6 @@ def task_calc_treasury_data():
         "clean": True,
     }
 
-def task_generate_reference():
-    """Run generate_reference.py to create reference.csv"""
-    return {
-        "actions": ["python ./src/generate_reference.py"],
-        "targets": [DATA_DIR / "reference.csv"],
-        "clean": True,
-    }
 
 def task_process_treasury_data_notebook():
     """Optionally run `process_treasury_data.ipynb` if needed."""
